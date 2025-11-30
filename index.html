@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="contenedor-juego">
         <h1>Número Secreto</h1>
         <p>Adivina el número entre el 1 y el 10</p>
-
         <input type="number" id="entradaUsuario" placeholder="#">
-
-        <button id="botonIntentar">Intentar</button>
+        
+        <div class="botones">
+            <button id="botonIntentar">Intentar</button>
+            <button id="botonReiniciar" disabled>Nuevo Juego</button>
+        </div>
 
         <p id="mensaje"></p>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
