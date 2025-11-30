@@ -1,14 +1,15 @@
 :root {
-    --azul-fondo: #eef2f6;
-    --azul-principal: #2563eb;
-    --azul-oscuro: #1e3a8a;
-    --azul-claro: #dbeafe;
+    --fondo: #e8ecf3;
+    --primario: #4f46e5;
+    --primario-oscuro: #3730a3;
+    --fondo-blur: rgba(255, 255, 255, 0.55);
+    --borde-blur: rgba(255, 255, 255, 0.25);
+    --texto: #334155;
     --blanco: #ffffff;
-    --gris-texto: #475569;
 }
 
 body {
-    background-color: var(--azul-fondo);
+    background: linear-gradient(135deg, #dfe7f3, #f0f4fa);
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: flex;
     justify-content: center;
@@ -18,49 +19,50 @@ body {
 }
 
 .tarjeta-juego {
-    background-color: var(--blanco);
+    backdrop-filter: blur(18px);
+    background: var(--fondo-blur);
     padding: 3rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
-    width: 350px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    width: 360px;
     text-align: center;
-    border: 1px solid var(--azul-claro);
+    border: 1px solid var(--borde-blur);
 }
 
 .encabezado h1 {
-    color: var(--azul-oscuro);
-    font-size: 2rem;
+    color: var(--primario-oscuro);
+    font-size: 2.2rem;
     margin: 0 0 10px 0;
 }
 
 .encabezado p {
-    color: var(--gris-texto);
+    color: var(--texto);
     margin-bottom: 2rem;
 }
 
-/* Nueva disposición: Estilo cápsula */
 .grupo-input {
     display: flex;
-    background: var(--azul-fondo);
-    padding: 5px;
+    background: var(--blanco);
+    padding: 6px;
     border-radius: 50px;
-    border: 2px solid var(--azul-claro);
+    border: 2px solid transparent;
     margin-bottom: 20px;
-    transition: border-color 0.3s;
+    transition: 0.3s;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .grupo-input:focus-within {
-    border-color: var(--azul-principal);
+    border-color: var(--primario);
 }
 
 #entradaUsuario {
     border: none;
     background: transparent;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     padding: 10px;
-    width: 60px;
+    width: 70px;
     text-align: center;
-    color: var(--azul-oscuro);
+    color: var(--primario-oscuro);
     outline: none;
     -moz-appearance: textfield;
 }
@@ -70,19 +72,19 @@ body {
 }
 
 #botonIntentar {
-    background-color: var(--azul-principal);
+    background: var(--primario);
     color: white;
     border: none;
     padding: 10px 25px;
     border-radius: 50px;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
     flex-grow: 1;
-    transition: background-color 0.3s;
+    transition: 0.3s;
 }
 
 #botonIntentar:hover {
-    background-color: var(--azul-oscuro);
+    background: var(--primario-oscuro);
 }
 
 #botonIntentar:disabled {
@@ -93,44 +95,47 @@ body {
 #mensaje {
     min-height: 24px;
     font-weight: 500;
-    color: var(--azul-principal);
+    color: var(--primario);
     margin-bottom: 2rem;
 }
 
 .pie-pagina {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    border-top: 1px solid var(--azul-fondo);
+    gap: 12px;
+    border-top: 1px solid rgba(0,0,0,0.05);
     padding-top: 20px;
 }
 
-#botonReiniciar, #botonProyectos {
-    background: transparent;
+#botonReiniciar, 
+#botonProyectos {
+    background: var(--blanco);
     border: 1px solid transparent;
     padding: 10px;
-    color: var(--gris-texto);
+    color: var(--texto);
     cursor: pointer;
     font-size: 0.9rem;
-    border-radius: 8px;
-    transition: all 0.2s;
+    border-radius: 10px;
+    transition: 0.25s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
 }
 
 #botonReiniciar {
-    color: var(--azul-principal);
+    color: var(--primario);
     font-weight: 600;
 }
 
 #botonReiniciar:hover:not(:disabled) {
-    background-color: var(--azul-claro);
+    background-color: #eef2ff;
 }
 
 #botonReiniciar:disabled {
     color: #cbd5e1;
     cursor: default;
+    background: #f1f5f9;
 }
 
 #botonProyectos:hover {
-    text-decoration: underline;
-    color: var(--azul-oscuro);
+    background: #f1f5f9;
+    color: var(--primario-oscuro);
 }
