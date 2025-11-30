@@ -1,0 +1,86 @@
+body {
+    background-color: #121212; 
+    color: #e0e0e0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.contenedor-juego {
+    background-color: #1e1e1e; 
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+    text-align: center;
+    width: 320px;
+    border: 1px solid #333;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+p {
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+}
+
+
+#entradaUsuario {
+    background-color: #2c2c2c;
+    border: 2px solid #3d3d3d;
+    color: white;
+    padding: 12px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    width: 70px;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+    
+    -moz-appearance: textfield; 
+}
+
+
+#entradaUsuario:focus {
+    border-color: #bb86fc; 
+    box-shadow: 0 0 8px rgba(187, 134, 252, 0.3);
+}
+
+
+#botonIntentar {
+    background-color: #bb86fc; 
+    color: #121212; 
+    border: none;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+#botonIntentar:hover {
+    background-color: #a370f7;
+    transform: translateY(-2px); 
+}
+
+#botonIntentar:active {
+    transform: translateY(0);
+}
+
+
+#mensaje {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    min-height: 20px; 
+}
