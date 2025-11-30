@@ -3,22 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Número Mágico</title>
+    <title>Adivina el Número</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="contenedor-juego">
-        <h1>Número Secreto</h1>
-        <p>Adivina el número entre el 1 y el 10</p>
-        <input type="number" id="entradaUsuario" placeholder="#">
-        
-        <div class="botones">
-            <button id="botonIntentar">Intentar</button>
-            <button id="botonReiniciar" disabled>Nuevo Juego</button>
+
+    <div class="tarjeta-juego">
+        <div class="encabezado">
+            <h1>Número Secreto</h1>
+            <p>Adivina un número del 1 al 10!.</p>
         </div>
 
-        <p id="mensaje"></p>
+        <div class="area-juego">
+            <div class="grupo-input">
+                <input type="number" id="entradaUsuario" placeholder="#" min="1" max="10">
+                <button id="botonIntentar">Probar</button>
+            </div>
+            
+            <p id="mensaje">¿Podras adivinarlo?</p>
+        </div>
+
+        <div class="pie-pagina">
+            <button id="botonReiniciar" disabled>Jugar de nuevo</button>
+            <button id="botonProyectos" onclick="window.location.href='https://jossie0280.github.io/Portafolio/proyectos.html'">
+                Mis Proyectos
+            </button>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
