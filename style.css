@@ -1,17 +1,15 @@
 :root {
-    --fondo-oscuro: #0f0c29;
-    --fondo-gradiente: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-    --color-acento: #ffd700;
-    --color-acento-secundario: #9b5de5;
-    --texto-principal: #ffffff;
-    --texto-secundario: #d1d1d1;
-    --cristal-bg: rgba(255, 255, 255, 0.1);
-    --cristal-borde: rgba(255, 255, 255, 0.2);
+    --fondo-principal: #1e293b;
+    --fondo-tarjeta: #334155;
+    --color-primario: #3b82f6;
+    --color-texto: #f8fafc;
+    --color-texto-secundario: #94a3b8;
+    --borde-suave: #475569;
 }
 
 body {
-    background: var(--fondo-gradiente);
-    color: var(--texto-principal);
+    background-color: var(--fondo-principal);
+    color: var(--color-texto);
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -24,34 +22,27 @@ body {
 
 .contenedor-principal {
     display: flex;
-    background: var(--cristal-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--cristal-borde);
-    border-radius: 20px;
+    background-color: var(--fondo-tarjeta);
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
-    max-width: 900px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    max-width: 850px;
     width: 100%;
+    border: 1px solid var(--borde-suave);
 }
 
 .seccion-imagen {
     flex: 1;
     min-height: 300px;
     position: relative;
-    overflow: hidden;
+    background-color: #0f172a;
 }
 
 .seccion-imagen img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.8) contrast(1.2);
-    transition: transform 0.5s ease;
-}
-
-.contenedor-principal:hover .seccion-imagen img {
-    transform: scale(1.05);
+    opacity: 0.8;
 }
 
 .seccion-juego {
@@ -65,18 +56,137 @@ body {
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--color-acento);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto);
+    font-weight: 600;
 }
 
 .texto-intro {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 1.6;
-    color: var(--texto-secundario);
-    margin-bottom: 2.5rem;
-    max-width: 400px;
+    color: var(--color-texto-secundario);
+    margin-bottom: 2rem;
+}
+
+.area-input {
+    margin-bottom: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#entradaUsuario {
+    background-color: #f1f5f9;
+    border: 2px solid var(--borde-suave);
+    color: #0f172a;
+    padding: 12px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    width: 80px;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s;
+    -moz-appearance: textfield;
+}
+
+#entradaUsuario:focus {
+    border-color: var(--color-primario);
+}
+
+#entradaUsuario::-webkit-outer-spin-button,
+#entradaUsuario::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.botones {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+#botonIntentar {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+#botonIntentar:hover {
+    background-color: #2563eb;
+}
+
+#botonIntentar:disabled {
+    background-color: var(--borde-suave);
+    color: var(--color-texto-secundario);
+    cursor: not-allowed;
+}
+
+#botonReiniciar {
+    background-color: transparent;
+    border: 1px solid var(--borde-suave);
+    color: var(--color-texto);
+}
+
+#botonReiniciar:hover {
+    background-color: var(--borde-suave);
+}
+
+#botonReiniciar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#botonProyectos {
+    background-color: transparent;
+    color: var(--color-primario);
+    border: 1px solid transparent; 
+}
+
+#botonProyectos:hover {
+    text-decoration: underline;
+}
+
+.area-mensaje {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#mensaje {
+    font-size: 1rem;
+    color: var(--color-texto);
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .contenedor-principal {
+        flex-direction: column;
+    }
+
+    .seccion-imagen {
+        min-height: 180px;
+        max-height: 200px;
+    }
+
+    .seccion-juego {
+        padding: 2rem 1.5rem;
+    }
 }
